@@ -1,0 +1,44 @@
+#news
+{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+#image
+{
+    float: left;
+    width: 300px;
+    height: 200px;
+}
+
+#data
+{
+    margin-left: 300px;
+    width: 460px;
+    height: 225px;
+}
+
+#date
+{
+    color: #313131;
+    text-align: right;
+    font-size: 14px;
+}
+
+#title
+{
+    text-align: center; /* Выравнивание по центру */
+    background: #DFDCCE; /* Цвет фона шапки */
+    color: #2b4697;
+    width: 80%;
+}
+
+#anons
+{
+    padding: 2px;
+    margin-left: 10%;
+    width: 80%;
+    margin-top: -30px;
+    background-color: #b6c0e3;
+    color: #000000;
+}
