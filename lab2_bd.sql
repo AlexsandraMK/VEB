@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Мар 03 2021 г., 14:42
+-- Время создания: Мар 03 2021 г., 16:23
 -- Версия сервера: 10.4.17-MariaDB
 -- Версия PHP: 8.0.2
 
@@ -38,6 +38,13 @@ CREATE TABLE `my_bd` (
   `pict_2` text NOT NULL,
   `author` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `my_bd`
+--
+
+INSERT INTO `my_bd` (`id`, `date_new`, `title`, `anons`, `text_new`, `pict`, `pict_1`, `pict_2`, `author`) VALUES
+(12, '2021-03-03 21:53:03', 'Польнарефф нашел ДЕВУШКУ?', 'СМИ рассекретили возлюбленную Жан-Пьера Польнареффа. Кто она? Как она покорила сердце льва пустошей?', 'Артемка напишет текст', 'img_id_1/Img_5.png', 'img_id_1/Img_1.png', 'img_id_1/Img_2.png', 'Каральчук Артём');
 
 -- --------------------------------------------------------
 
@@ -82,7 +89,7 @@ ALTER TABLE `users_bd`
 -- AUTO_INCREMENT для таблицы `my_bd`
 --
 ALTER TABLE `my_bd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT для таблицы `users_bd`
