@@ -95,7 +95,7 @@
                                         {
                                             $sql = "DELETE FROM `my_bd` WHERE id = $id";
                                             $h = mysqli_query($mysqli, $sql);
-                                            header("Location:main.php?admin=1");
+                                            echo "<meta http-equiv='refresh' content='0;URL=main.php'>"; 
                                         }
                                     ?>
                                     <form method="POST">
