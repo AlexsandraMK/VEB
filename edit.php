@@ -4,15 +4,23 @@
 	$mysqli = new mysqli("localhost", "root", "", $name_bd);
 	if ($mysqli->connect_errno)
 		echo "Не удалось подключиться к MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	
+
     $id = $_GET['id'];
+    $new = $_GET['new'];
+	if ($new == 'FALSE')
+    {
+        
+        $sql="SELECT * FROM `my_bd` WHERE id= '$id'";
+        $result=mysqli_query($mysqli, $sql);
+        $record = mysqli_fetch_assoc($result);
+    }
 ?>
 
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Джо Джо NEWS</title>
-        <link rel="stylesheet" type="text/css" href="Стили/main_back.css">
+        <link rel="stylesheet" type="text/css" href="main_back.css">
     </head>
  
     <body>
@@ -35,27 +43,68 @@
         			    $anons = $_POST['anons'];
         			    $author = $_POST['author'];
 
+                        if ($new == 'TRUE')
+                        {
+                        	echo "TRUE";
              		    $sql = "INSERT INTO `my_bd` (`id`, `title`, `text_new`, `pict`, `anons`, `author`, `date_new`) VALUES ('$id', '$title','$text' ,'$image' ,'$anons', '$author' , '$date')";
-        	 		    if (mysqli_query($mysqli, $sql))
-        				    header("Location:main.php");	 
+                        }
+                        else
+                        {
+                        	echo "ne TRUE";
+                        $sql = "UPDATE `my_bd` SET `title` = '$title', `text_new` = '$text', `pict` = '$image', `anons` = '$anons', `date_new` = '$date' WHERE id='$id'"; 
+                        }
+                        mysqli_query($mysqli, $sql);
+        			    header("Location:main.php");
+
         		    }
         	    ?>
 			    <form method="POST">    
         	        <tr> Заголовок </tr>
-        	        <input type="text" name="title" style="margin: 10px">
+                                        <br>
+        	        <input type="text" name="title" style="margin: 10px" required maxlength=40 value=<?php 
+                            if ($new == 'FALSE') {
+                                echo $record['title'];
+                            }
+                        ?> > 
         	        <br>
         	        <tr> Картинка </tr>
-        	        <input type="text" name="image" style="margin: 10px">
+                                        <br>
+        	        <input type="text" name="image" style="margin: 10px;" placeholder="Img_1.png, Img_2.png, Img_3.png..." required value=<?php 
+                            if ($new == 'FALSE') {
+                                echo $record['pict'];
+                            }
+                        ?> >
+                    
         	        <br>
         	        <!-- <input type="file" name="Главное изображение">  -->        	
         	        <tr> Анонс </tr>
-        	        <input type="text" name="anons" style="margin: 10px">
+                                        <br>
+        	        <textarea name="anons" style="margin: 10px" required cols=50 rows=5 maxlength=1000>
+                        <?php 
+                            if ($new == 'FALSE') {
+                                echo $record['anons'];
+                            }
+                        ?>   
+                    </textarea> 
         	        <br>
         	        <tr> Текст </tr>
-        	        <input type="text" name="text" style="margin: 10px">
+                                        <br>
+        	        <textarea name="text" style="margin: 10px" required cols=50 rows=25 maxlength=5000 >  <?php 
+                            if ($new == 'FALSE') {
+                                echo $record['text_new'];
+                            }
+                        ?> 
+                    </textarea>
         	        <br>
         	        <tr> Автор </tr>
-        	        <input type="text" name="author" style="margin: 10px"> 
+                    <br>
+        	        <input type="text" name="author" style="margin: 10px" required maxlength=25 
+                    <?php 
+                            if ($new == 'FALSE') {
+                                echo 'value=' . $record['author'];
+                                echo ' readonly';
+                            }
+                        ?>  > 
         	        <br>         	
         	  	    <input type="submit" name="submit1" value="Отправить" style="margin: 10px">
         	 	    <br>
