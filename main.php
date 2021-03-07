@@ -31,7 +31,7 @@
     }
 
     // Шаг с которым будет перемещаться слайдер
-    $step_new = $height_new + 20;
+    $step_new = $height_new + 40;
 ?>
 
 <html>
@@ -56,7 +56,7 @@
         <div id="content">
 <?php
 // Установка размера области для новостей
-echo '      <div id="list_news" style="height:' . $step_new + $height_new + 20 . 'px">';
+echo '      <div id="list_news" style="height:' . $step_new*2 . 'px">';
 ?>
                 <div id="polosa">
 <?php
