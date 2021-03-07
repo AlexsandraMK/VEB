@@ -1,5 +1,4 @@
-#container
-{
+п»ї#container {
     margin: 0 auto;
     background-image: url(JotaroSide.jpg);
     background-position: top;
@@ -16,19 +15,17 @@
     mix-blend-mode: color-burn;
 }
 
-#content
-{
+#content {
     background: #BFBBAC;
-    margin: 0 auto; /* Ширина колонок */
+    margin: 0 auto;
     padding: 10px;
     min-width: 800px;
     max-width: 800px;
     position: relative;
-    min-height: 100%;
+    height: 93%;
 }
 
-#footer
-{
+#footer {
     background-color: #667299;
     width: 97.5%;
     font-size: 18px;
@@ -36,18 +33,36 @@
     bottom: 0;
 }
 
-#empty
-{
+#empty {
     height: 10px;
 }
 
-p
-{
-    margin-top: 0.5em; /* Отступ сверху */
-    margin-bottom: 0.5em; /* Отступ снизу */
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
-hr
-{
+hr {
     color: #ffffff;
+}
+#top_site {
+    background-color: #e3b688;
+    text-align: center;
+    height: 40px;
+}
+
+#list_news {
+    overflow: hidden;
+}
+
+#polosa {
+    position: relative;
+    top: 0;
+    transition: all ease 1s;
+}
+
+#polosa::after {
+    content:"";
+    display:block;
+    clear:both;
 }

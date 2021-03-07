@@ -1,20 +1,22 @@
-#news
-{
-    margin-top: 20px;
-    margin-left: 40px;
+п»ї
+#list_news {
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
-#image
-{
+#one_new {
+}
+
+#image {
     float: left;
     width: 300px;
     height: 200px;
 }
 
-#data
-{
+#data {
     margin-left: 300px;
-    width: 460px;
+    margin-top: 20px;
+    width: 484px;
     height: 225px;
 }
 
@@ -27,8 +29,8 @@
 
 #title
 {
-    text-align: center; /* Выравнивание по центру */
-    background: #DFDCCE; /* Цвет фона шапки */
+    text-align: center; /* Р’С‹СЂР°РІРЅРёРІР°РЅРёРµ РїРѕ С†РµРЅС‚СЂСѓ */
+    background: #DFDCCE; /* Р¦РІРµС‚ С„РѕРЅР° С€Р°РїРєРё */
     color: #2b4697;
     width: 80%;
 }
@@ -42,3 +44,20 @@
     background-color: #b6c0e3;
     color: #000000;
 }
+
+#add_new {
+    margin-bottom: 22px;
+    position: absolute;
+    bottom: 0;
+}
+
+img {
+    width: inherit;
+    height: inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+
