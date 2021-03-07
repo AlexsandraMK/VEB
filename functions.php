@@ -8,39 +8,38 @@ function writeAllNews($news, $height_new, $is_admin)
     while($record = mysqli_fetch_assoc($news))
     {
         $id=$record['id'];
-        echo '<div id="one_new" style="height:' . $height_new .'px;">';
-        echo '  <a href="index.php?id=' . $record['id'] . '" style="text-decoration: none;" title="Читать новость подробнее">';
+        echo '<div id="one_new' . $id . '" class="one_new" style="height:' . $height_new .'px;">';
+        echo '  <a id="a' . $id . '" href="index.php?id=' . $record['id'] . '" style="text-decoration: none;" title="Читать новость подробнее">';
 
         // Изображение новости
-        echo '      <div id="image">';
-        echo '          <img src=' . $record['pict'] . '> </img>';
+        echo '      <div id="image' . $id . '" class="image">';
+        echo '          <img id="img' . $id . '"src=' . $record['pict'] . '> </img>';
         echo '      </div>';
 
         // Информации новости
-        echo '      <div id="data">';
-        echo '          <div id="empty"></div>';
-        echo '          <div id="title">';
-        echo '              <h2>' . $record['title'] . '</h2>';
-        echo '              <div id="empty"></div>';
+        echo '      <div id="data' . $id . '" class="data">';
+        echo '          <div id="empty' . $id . '_1" class="empty"></div>';
+        echo '          <div id="title' . $id . '" class="title">';
+        echo '              <h2 id="h2' . $id . '">' . $record['title'] . '</h2>';
+        echo '              <div id="empty' . $id . '_2" class="empty"></div>';
         echo '          </div>';
-        echo '          <div id="anons">';
-        echo '              <p style="text-indent: 20px; margin-left: 10px;  color: #000000;">' . $record['anons'] . '</p>';
-        echo '              <hr>';
-        echo '              <div id="date">';
-        echo '                  <p> "Дата размещения: "' . $record['date_new'] . '</p>';
+        echo '          <div id="anons' . $id . '" class="anons">';
+        echo '              <p id="p_anons' . $id . '" style="text-indent: 20px; margin-left: 10px;  color: #000000;">' . $record['anons'] . '</p>';
+        echo '              <hr id="hr_anons' . $id . '">';
+        echo '              <div id="date' . $id . '" class="date">';
+        echo '                  <p id="p_date' . $id . '"> "Дата размещения: "' . $record['date_new'] . '</p>';
         echo '              </div>';
         echo '          </div>';
         echo '      </div>';
-        echo '      <hr>';
+        echo '      <hr id="hr_a' . $id . '">';
         echo '  </a>';
         
         if ($is_admin)
         {
-            echo '<p>';
-            echo '  <a href="edit.php?id=' . $record['id'] . '" style="text-decoration: none;">';
-            echo '      <input type="button" name="change" value="Изменить запись">';
+            echo '<p id="p_is_admin' . $id . '">';
+            echo '  <a id="a_is_admin' . $id . '" href="edit.php?id=' . $record['id'] . '" style="text-decoration: none;">';
+            echo '      <input id="input_is_admin_change' . $id . '" type="button" name="change" value="Изменить запись">';
             echo '  </a>';
-            echo '  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
             # Если кнопка нажата
             if( isset( $_POST["DELETE" . $id] ) )
             {
@@ -48,8 +47,8 @@ function writeAllNews($news, $height_new, $is_admin)
                 mysqli_query($mysqli, $sql);
                 echo "<meta http-equiv='refresh' content='0;URL=main.php'>"; 
             }                        
-            echo '  <form method="POST">';
-            echo '      <input type="submit" name="DELETE' . $id . '" value="Удалить запись" />';
+            echo '  <form id="form_is_admin' . $id . '" method="POST">';
+            echo '      <input id="input_is_admin_delete' . $id . '" type="submit" name="DELETE' . $id . '" value="Удалить запись" />';
             echo '  </form>';
             echo '</p>';
         }
