@@ -45,15 +45,35 @@
 
                         if ($new == 'TRUE')
                         {
-                        	echo "TRUE";
-             		    $sql = "INSERT INTO `my_bd` (`id`, `title`, `text_new`, `pict`, `anons`, `author`, `date_new`) VALUES ('$id', '$title','$text' ,'$image' ,'$anons', '$author' , '$date')";
+                        
+             		    $sql = "INSERT INTO `my_bd` (`id`, `title`, `text_new`, `pict`, `anons`, `author`, `date_new`) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+                        $stmt = mysqli_prepare($mysqli, $sql);
+                        if ($stmt === FALSE)
+                        {
+                        	echo "Preparation failed. Data wasn't sent";
+                        	return;
+                        }
+
+                        mysqli_stmt_bind_param($stmt, "issssss", $id, $title, $text, $image, $anons, $author, $date);
+                        
                         }
                         else
                         {
-                        	echo "ne TRUE";
                         $sql = "UPDATE `my_bd` SET `title` = '$title', `text_new` = '$text', `pict` = '$image', `anons` = '$anons', `date_new` = '$date' WHERE id='$id'"; 
+
+                        $stmt = mysqli_prepare($mysqli, $sql);                       
+                        if ($stmt === FALSE)
+                        {
+                        	echo "Preparation failed. Data wasn't sent";
+                        	return;
                         }
-                        mysqli_query($mysqli, $sql);
+
+                        mysqli_stmt_bind_param($stmt, "sssss", $title, $text, $image, $anons, $date);
+                        }
+                        mysqli_stmt_execute($stmt);
+                        mysqli_stmt_close($stmt);
+                        //mysqli_query($mysqli, $sql);
         			    header("Location:main.php");
 
         		    }
