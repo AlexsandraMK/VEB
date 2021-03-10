@@ -63,7 +63,7 @@ echo '      <div id="list_news" style="height:' . $step_new*2 . 'px">';
 ?>
                 <div id="polosa">
 <?php
-                    $id = writeAllNews($result, $height_new, $is_admin);
+                    $id = writeAllNews($mysqli, $result, $height_new, $is_admin);
 ?>
                 </div>
             </div>
@@ -72,7 +72,9 @@ echo '      <div id="list_news" style="height:' . $step_new*2 . 'px">';
             </div>
 <?php
             addNew($id, $is_admin);
+
 ?>   
+                
             <div id="footer">   &copy; Ефименко Алекcандра, Каральчук Артем </div> 
         </div>
     </div>

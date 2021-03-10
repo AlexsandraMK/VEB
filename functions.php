@@ -2,7 +2,7 @@
 
 <?php
 // Вводим список новостей + высоту новости(зависит от того админ клиент или нет)
-function writeAllNews($news, $height_new, $is_admin)
+function writeAllNews($mysqli, $news, $height_new, $is_admin)
 {
     $id=0;
     while($record = mysqli_fetch_assoc($news))
@@ -45,7 +45,12 @@ function writeAllNews($news, $height_new, $is_admin)
             {
                 $sql = "DELETE FROM `my_bd` WHERE id = $id";
                 mysqli_query($mysqli, $sql);
-                echo "<meta http-equiv='refresh' content='0;URL=main.php'>"; 
+                mysqli_close($mysqli);
+?>
+                <script>
+                    location.href=location.href;
+                </script>
+<?php
             }                        
             echo '  <form id="form_is_admin' . $id . '" method="POST">';
             echo '      <input id="input_is_admin_delete' . $id . '" type="submit" name="DELETE' . $id . '" value="Удалить запись" />';
