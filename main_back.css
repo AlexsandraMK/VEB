@@ -11,12 +11,11 @@
     font-family: fantasy;
     text-decoration: none;
     text-shadow: 2px 2px 3px black;
-    color: #5574d3;
-    mix-blend-mode: color-burn;
+    color: #6A6E6D;
 }
 
 #content {
-    background: #BFBBAC;
+    background: #E6E2DA;
     margin: 0 auto;
     padding: 10px;
     min-width: 800px;
@@ -26,15 +25,11 @@
 }
 
 #footer {
-    background-color: #667299;
+    background-color: #D4CACC;
     width: 97.5%;
     font-size: 18px;
     position: absolute;
     bottom: 0;
-}
-
-#empty {
-    height: 10px;
 }
 
 p {
@@ -46,23 +41,44 @@ hr {
     color: #ffffff;
 }
 #top_site {
-    background-color: #e3b688;
+    background-color: #D4CACC;
     text-align: center;
     height: 40px;
 }
 
 #list_news {
+    background-color: #ACAAA6;
     overflow: hidden;
 }
 
 #polosa {
     position: relative;
-    top: 0;
+    top: -20px;
     transition: all ease 1s;
 }
 
-#polosa::after {
-    content:"";
-    display:block;
-    clear:both;
+.button {
+    background-color: #F2EDE9;
+    border: 1px solid black;
+    text-align: center;
+    height: 20px;
 }
+
+.arrow {
+    width: 10px;
+    height: 9px;
+    border-top: 5px solid rgb(138, 66, 81, .4);
+    border-right: 5px solid rgb(138, 66, 81, .4);
+    margin: 0 auto;
+}    
+
+.arrow-top {
+    margin-top: 5px;
+    transform: rotate(-45deg);
+}
+
+.arrow-bottom {
+    transform: rotate(135deg);
+}    
+
+

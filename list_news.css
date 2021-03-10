@@ -1,47 +1,46 @@
-﻿
-#list_news {
+﻿.one_new {
     margin-left: 30px;
     margin-right: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-#one_new {
-}
-
-#image {
+.image {
     float: left;
     width: 300px;
     height: 200px;
 }
 
-#data {
+.data {
     margin-left: 300px;
-    margin-top: 20px;
     width: 484px;
     height: 225px;
 }
 
-#date
+.empty {
+    height: 10px;
+}
+
+.date
 {
     color: #313131;
     text-align: right;
     font-size: 14px;
 }
 
-#title
-{
+.title {
     text-align: center; /* Выравнивание по центру */
-    background: #DFDCCE; /* Цвет фона шапки */
-    color: #2b4697;
+    background: #C3C9C8; /* Цвет фона шапки */
+    color: #2D5F56;
     width: 80%;
 }
 
-#anons
-{
+.anons {
     padding: 2px;
     margin-left: 10%;
     width: 80%;
     margin-top: -30px;
-    background-color: #b6c0e3;
+    background-color: #F2EDE9;
     color: #000000;
 }
 
