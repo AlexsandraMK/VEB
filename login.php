@@ -11,11 +11,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Джо Джо NEWS</title>
-        <link rel="stylesheet" type="text/css" href="Стили/main_back.css">
+        <link rel="stylesheet" type="text/css" href="Stili/main_back.css">
     </head>
  
     <body>
-        <div style=" background-color: #e3b688; text-align: center;">
+        <div  id="top_site">
             <a id="name_magazine">
                 Джо Джо NEWS
             </a>
