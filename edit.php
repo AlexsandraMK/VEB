@@ -60,7 +60,7 @@
                         }
                         else
                         {
-                        $sql = "UPDATE `my_bd` SET `title` = '$title', `text_new` = '$text', `pict` = '$image', `anons` = '$anons', `date_new` = '$date' WHERE id='$id'"; 
+                        $sql = "UPDATE `my_bd` SET `title` = ?, `text_new` = ?, `pict` = ?, `anons` = ?, `date_new` = ? WHERE id= ?"; 
 
                         $stmt = mysqli_prepare($mysqli, $sql);                       
                         if ($stmt === FALSE)
@@ -69,7 +69,7 @@
                         	return;
                         }
 
-                        mysqli_stmt_bind_param($stmt, "sssss", $title, $text, $image, $anons, $date);
+                        mysqli_stmt_bind_param($stmt, "sssssi", $title, $text, $image, $anons, $date, $id);
                         }
                         mysqli_stmt_execute($stmt);
                         mysqli_stmt_close($stmt);
