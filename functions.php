@@ -37,7 +37,7 @@ function writeAllNews($news, $height_new, $is_admin)
         if ($is_admin)
         {
             echo '<p id="p_is_admin' . $id . '">';
-            echo '  <a id="a_is_admin' . $id . '" href="edit.php?id=' . $record['id'] . '" style="text-decoration: none;">';
+            echo '  <a id="a_is_admin' . $id . '" href="edit.php?id=' . $record['id'] . '&new=FALSE' . '" style="text-decoration: none;">';
             echo '      <input id="input_is_admin_change' . $id . '" type="button" name="change" value="Изменить запись">';
             echo '  </a>';
             # Если кнопка нажата
@@ -65,7 +65,7 @@ function addNew($id, $is_admin)
     if ($is_admin)
     {
         echo '<div id="add_new">';
-        echo '  <a href="edit.php?id=' . $id+1 . '" style="text-decoration: none;">';
+        echo '  <a href="edit.php?id=' . ($id+1) . '&new=TRUE' . '" style="text-decoration: none;">';
         echo '      <input type="button" name="create" value="Добавить запись">';
         echo '  </a>';
         echo '</div>';
