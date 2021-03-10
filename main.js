@@ -69,9 +69,7 @@ function buttonOffMouse(event) {
 }
 
 function toTop() {
-    alert(top_slide);
     top_slide = top_slide + parseFloat(height);
-    alert(top_slide);
     if (top_slide - 1 > 0) {
         alert("Вы достигли начала новостей");
         top_slide = -20;
