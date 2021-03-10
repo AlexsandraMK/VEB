@@ -46,14 +46,17 @@
  
 <body>
     <div  id="top_site">
-        <a id="name_magazine" style="margin-left: 90px" >   "Джо Джо NEWS"    </a>
+        <a id="name_magazine" style="margin-left: 90px" >   Джо Джо NEWS    </a>
         <div style="float: right; text-decoration: none;  text-align: center; margin-right: 5px">
-            <a href="login.php" style="text-decoration: none; font-size: 30px;">    "Sign in"   </a> 
+            <a href="login.php" style="text-decoration: none; font-size: 30px;">    Sign in   </a> 
         </div>
     </div>
     
     <div id="container">
         <div id="content">
+            <div id="button-arrow-top" class="button">
+            <div id="arrow-top" class="arrow arrow-top"></div>
+            </div>
 <?php
 // Установка размера области для новостей
 echo '      <div id="list_news" style="height:' . $step_new*2 . 'px">';
@@ -63,6 +66,9 @@ echo '      <div id="list_news" style="height:' . $step_new*2 . 'px">';
                     $id = writeAllNews($result, $height_new, $is_admin);
 ?>
                 </div>
+            </div>
+            <div id="button-arrow-bottom" class="button">
+            <div id="arrow-bottom" class="arrow arrow-bottom"></div>
             </div>
 <?php
             addNew($id, $is_admin);
