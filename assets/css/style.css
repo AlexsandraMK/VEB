@@ -1101,7 +1101,7 @@ p {
           font-size: 80px; } }
 
 .page-title-area {
-  margin-top: 110px; }
+  margin-top: 10px; }
   @media (max-width: 767px) {
     .page-title-area {
       margin-top: 16px; } }
