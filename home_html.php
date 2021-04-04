@@ -51,10 +51,9 @@
                         <div class="home_img">
                             <div class="home_text">
                                 <?php 
-                                writeUser(findUserById($id));
                                 if(isset($_SESSION['user']) && $_SESSION['user'] != 0 && $id != 0)
                                 {
-                                   
+                                    writeUser(findUserById($id));
                                     echo "<br><br><br><br>";
                                     if ( $id != $_SESSION['user'] ) 
                                     { 
